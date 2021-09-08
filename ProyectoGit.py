@@ -21,3 +21,32 @@ cod=int(input("Ingrese el código de articulo que desea llevar: "))
 #Si el artículo no es válido
 if cod>3 or cod<1:
     print(f"Ingrese un codigo de articulo valido") 
+#Si el artículo es válido
+else:
+    #Obtengo la cantidad a llevar
+    cant=int(input("Ingrese la cantidad a llevar: "))
+    #Según la cantidad a llevar calculo el descuento
+    if cant==1: 
+        totparcial=1
+    elif cant==2:
+        totparcial=1.5
+    elif cant==3:
+        totparcial=2
+    
+    #Si la cantidad ingresada es mayor a 3
+    if cant>3:
+        print(f"La cantidad de articulos no puede ser mayor a 3 ")
+    #Si la cantidad ingresada es menor a 1
+    elif cant<1:
+        print(f"La cantidad debe ser mayor a 0 ")
+    #Si la cantidad ingresada es entre 1 y 3    
+    else:
+        #Calculo el total a pagar en función al descuento y al precio del artículo
+        if cod==1:
+            total=totparcial*precio_1
+        elif cod==2:
+            total=totparcial*precio_2
+        elif cod==3:
+            total=totparcial*precio_3
+        #Muestro el total a pagar
+        print(f"El total a pagar es de: {total}")
